@@ -17,3 +17,4 @@
     ...
 </Project>
 ```
+* Build your solution. The StyleCop rules create warning from your code.
