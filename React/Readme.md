@@ -53,7 +53,7 @@ A javascript testing framework for both nodejs and the browser that makes testin
 ```
 $ npm install mocha --save-dev
 ```
-* As we pointed out above in order to use mocha with ESLint we must set mocha as true in the env section inside our **.eslintrc.json** file.
+* As we [pointed out above](#ESLint) in order to use mocha with ESLint we must set mocha as true in the env object inside our **.eslintrc.json** file.
 ## Chai
 Mocha allows us to use any assertion library we want. In this case we are using Chai.
 
@@ -76,5 +76,11 @@ $ npm install enzyme --save-dev
 $ npm install enzyme-adapter-react-15 --save-dev
 ```
 ## Sinon
+Sinon is a standalone unit testing library for JavaScript. It provides spies, stubs and mocks.
+### How to use it
+* Install Sinon via npm 
+```
+$ npm install sinon --save-dev
+```
 ## Karma
 
