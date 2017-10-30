@@ -9,7 +9,11 @@
 $ npm install eslint --save-dev
 ```
 * Create a *.eslintrc.json* file in the your solution's root folder.
-* Copy and paste the following code inside your eslintrc file
+* Install the React ESLint package using npm.
+```
+$ npm install eslint-plugin-react --save-dev
+```
+* Copy and paste the following code inside your *.eslintrc.json* file
 ```javascript
 {
     "plugins": [
