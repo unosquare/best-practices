@@ -44,3 +44,27 @@ $ npm install eslint-plugin-react --save-dev
      }
  }
 ```
+# Unit testing
+
+## Mocha
+A javascript testing framework for both nodejs and the browser for making testing easy
+### How to use it
+* Install Mocha via npm 
+```
+$ npm install mocha --save-dev
+```
+* As we pointed out above in order to use mocha with ESLint we must set mocha as true in the env section inside our **.eslintrc.json** file.
+## Chai
+Mocha allows us to use any assertion library we want. In this case we are using Chai.
+
+### How to use it
+* Install Chai via npm 
+```
+$ npm install chai --save-dev
+```
+
+
+## Enzyme
+## Sinon
+## Karma
+
