@@ -63,7 +63,7 @@ Mocha allows us to use any assertion library we want. In this case we are using 
 $ npm install chai --save-dev
 ```
 ## Enzyme
-According to [Enzyme's website]:
+According to [Enzyme's website](http://airbnb.io/enzyme/):
 > Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. Enzyme's API is meant to be intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
 
 ### How to use it
