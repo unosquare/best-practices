@@ -1,0 +1,20 @@
+nav {
+    margin-bottom: 0 !important;
+}
+
+.navbar {
+    min-height: 40px !important;
+}
+
+.nav-logo:hover {
+    background-color: black;
+}
+
+.sidefilter {
+    top: 125px !important;
+}
+
+.sidetoc {
+    top: 190px !important;
+}
+
