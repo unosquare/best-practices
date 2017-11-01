@@ -3,7 +3,7 @@
 <div class="hidden-sm col-md-2" role="complementary">
   <div class="doc" align="center">
     <span class="small mobile-hide">
-      <img id="logo" class="logo" src="{{_rel}}{{{_docLogo}}}{{^_docLogo}}logo.svg{{/_docLogo}}" alt="{{_appName}}" >
+      <img id="logo" class="doc-logo" src="{{_rel}}{{{_docLogo}}}{{^_docLogo}}logo.svg{{/_docLogo}}" alt="{{_appName}}" >
     </span>
   </div>
   <div class="sideaffix">
