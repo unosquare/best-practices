@@ -1,6 +1,11 @@
 {{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 
 <div class="hidden-sm col-md-2" role="complementary">
+  <div class="doc" align="center">
+    <span class="small mobile-hide">
+      <img id="logo" class="logo" src="{{_rel}}{{{_docLogo}}}{{^_docLogo}}logo.svg{{/_docLogo}}" alt="{{_appName}}" >
+    </span>
+  </div>
   <div class="sideaffix">
     {{^_disableContribution}}
     <div class="contribution">

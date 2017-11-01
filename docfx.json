@@ -22,18 +22,21 @@
         "dest": "api"
       },
       {
-        "files": [ "articles/**/*.md", "*.md", "toc.yml", "restapi/**" ]
+        "files": [ "*.md", "toc.yml", "restapi/**" ]
       }
     ],
     "resource": [
       {
-        "files": [ "articles/images/**"]
+        "files": [ "resources/**"],
+        "exclude": [ "obj/**", "_site/**" ]
       }
     ],
     "overwrite": "specs/*.md",
     "globalMetadata": {
       "_appTitle": "docfx seed website",
-      "_enableSearch": true
+      "_enableSearch": true,
+      "_docLogo": "resources/images/doc_logo.svg",
+      "_appLogoPath": "resources/images/logo.png"
     },
     "dest": "_site"
   }
