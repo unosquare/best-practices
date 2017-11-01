@@ -11,7 +11,7 @@
     <div class="contribution">
       <ul class="nav">
         {{#docurl}}
-        <li>
+        <li class="top-sep">
           <a href="{{docurl}}" class="contribution-link">{{__global.improveThisDoc}}</a>
         </li>
         {{/docurl}}
