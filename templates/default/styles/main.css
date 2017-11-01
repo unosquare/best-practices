@@ -22,10 +22,10 @@ nav {
     height: 40px !important;
 }
 
-doc {
-    align-content: center;
-    width: 100%;
-    margin-bottom: 10px;
+.doc {
+    position: fixed !important;
+    width: 140px;
+    height: 60px;
 }
 
 .sideaffix {
