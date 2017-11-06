@@ -1,2 +1,4 @@
-# best-practices
-Unosquare Labs Best Practices
+---
+redirect_from: "/"
+---
+# Unosquare Labs Best Practices
