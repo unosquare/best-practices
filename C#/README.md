@@ -53,13 +53,16 @@ You need to setup your solution with a two config files (`docfx.json` and `toc.y
 
 #### `docfx.json` file
 
+The `src` property is where you specified the c # project and solution that docfx is going to use to make the documentation.
+
+The `template` property is optional, docfx is going to use the default template, but you can modify this by exporting the template `docfx template export default` and then add to the docfx.json the `template` property and the path where the template was saved.
+
 ```json
 {
   "metadata": [
     {
       "src": [
-        { 
-            // Here are the project that you convert into the documentation       
+        {  
           "files": [ "**/*.sln", "src/DotnetNew/*.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "cwd": "src"
@@ -69,7 +72,6 @@ You need to setup your solution with a two config files (`docfx.json` and `toc.y
     }
   ],
   "build": {
-      // You can use the default template and modify or leave this in blank and docfx would use the default
     "template": [
       "templates/default"
     ],
