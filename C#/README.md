@@ -45,17 +45,26 @@ Another way to do that is selecting your class or method and with the keyboard c
 
 ## DocFx
 
-[DocFX](https://dotnet.github.io/docfx/) is a documentation generation tool for API reference and Markdown files! To use it you need to [download](https://github.com/dotnet/docfx/releases) it. We recommend using [Chocolatey](https://chocolatey.org) to install DocFx.
+[DocFX](https://dotnet.github.io/docfx/) is a documentation generation tool for API reference and Markdown files! To use it you need to [download](https://github.com/dotnet/docfx/releases) it.
 
 ### How to use it
 
-You need to setup your solution with a two config files (`docfx.json` and `toc.yml`) in order to build a documentation web site. For more information check the [documentation](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-1%2Ctabid-a).
+You need to setup your solution with two config files (`docfx.json` and `toc.yml`) and one `index.md` (usually is the same as `README.md`) in order to build a documentation web site. For more information check the [documentation](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html?tabs=tabid-1%2Ctabid-a).
 
 #### `docfx.json` file
 
-The `src` property is where you specified the c # project and solution that docfx is going to use to make the documentation.
+The `src` property is where you specified the solution and C# project that docfx is going to use to make the documentation.
 
-The `template` property is optional, docfx is going to use the default template, but you can modify this by exporting the template `docfx template export default` and then add to the docfx.json the `template` property and the path where the template was saved.
+The `template` property is optional, docfx is going to use the default template, but you can modify this by exporting the template `docfx template export default` and then add to the `docfx.json` the `template` property and the path where the template was saved.
+
+To build docfx.
+> docfx docfx.json
+
+Build and serve.
+> docfx docfx.json --serve
+
+If you have several custom templates, use this to build with another template.
+> docfx -t templates\custom
 
 ```json
 {
@@ -103,31 +112,31 @@ The `template` property is optional, docfx is going to use the default template,
 }
 
 ```
+
 #### `toc.yml` file
 
+These are references to the navigation bar that docfx is going to create, it will appear with the name and have a link to the href that are specified in this file.
+
 ```yml
-# This are the names that appear on the navigation bar
 - name: API Documentation
-# This is the reference
   href: obj/api/
-# This are the names that appear on the navigation bar
+
 - name: REST API
-# This is the reference
   href: restapi/
 ```
 
-Here some useful comands:
+### Configuration of docfx in `appveyor.yml` for another project
 
-```
-// To export the default template and make modifications
-> docfx template export default
+Since we have the template in this repository, you only need to add the docfx.json and the toc.yml to the root of your project, making the necessary modifications to adapt it to the project (generally only adding the routes to the `src` property and changing the `_docLogo` to the logo of your project), and then adding these lines after configuring the git credentials and cloning your main project.
 
-// To build the documentation and the site
-> docfx docfx.json
+````
+git clone -b documentation https://github.com/unosquare/best-practices.git -q
+docfx docfx.json --logLevel Error
+````
 
-// To build and run the site
-> docfx docfx.json --serve
+And then these lines to have an index inside the destination folder `_site`
 
-// To build with other template
-> docfx -t templates\custom
-```
+````
+CD _site
+Copy-Item README.html index.html -force
+````
