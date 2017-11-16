@@ -1,6 +1,3 @@
----
-redirect_from: "/"
----
 # Unosquare Labs Best Practices
 
 ## Table of Contents
