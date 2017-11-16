@@ -9,7 +9,7 @@ Enjoy it!
 - Coding
   - [StyleCop](#stylecop)
   - [Unit Testing](#unit-testing)
-- Docummentation
+- Documentation
   - [Ghost Doc](#ghost-doc)
   - [DocFx](#docfx)
 
