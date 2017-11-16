@@ -45,7 +45,7 @@ Another way to do that is selecting your class or method and with the keyboard c
 
 ## DocFx
 
-[DocFX](https://dotnet.github.io/docfx/) is a documentation generation tool for API reference and Markdown files! To use it you need to [download](https://github.com/dotnet/docfx/releases) it.
+[DocFX](https://dotnet.github.io/docfx/) is a documentation generation tool for API reference and Markdown files! To use it you need to [download](https://github.com/dotnet/docfx/releases) it. We recommend using [Chocolatey](https://chocolatey.org) to install DocFx.
 
 ### How to use it
 
