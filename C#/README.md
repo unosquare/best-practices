@@ -6,10 +6,10 @@ Enjoy it!
 
 ## Table of Contents
 
-- C# Best Practices
+- Coding
   - [StyleCop](#stylecop)
   - [Unit Testing](#unit-testing)
-- C# Docummentation
+- Docummentation
   - [Ghost Doc](#ghost-doc)
   - [DocFx](#docfx)
 
