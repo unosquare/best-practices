@@ -1,6 +1,6 @@
 # The C# Unosquare Labs Best Practices
 
-Welcome to the C# Best Practices and Style Guides. We provide you some C# standards and tools that we use in our OSS projects that you could use in your personal projects.
+Welcome to the C# Best Practices and Style Guides. We provide you some C# standards and tools that we use in our OSS projects.
 
 Enjoy it!
 
