@@ -1,3 +1,18 @@
+# Unosquare Labs Best Practices
+
+Welcome to the C# Best Practices and Style Guides. We provide you some C# standards and tools that we use in our OSS projects that you could use in your personal projects.
+
+Enjoy it!
+
+## Table of Contents
+
+- C# Best Practices
+  - [StyleCop](#stylecop)
+  - [Unit Testing](#unit-testing)
+- C# Docummentation
+  - [Ghost Doc](#ghost-doc)
+  - [DocFx](#docfx)
+
 # C# Best Practices
 
 ## StyleCop
@@ -20,6 +35,125 @@
 </Project>
 ```
 * Build your solution. The StyleCop rules create warning from your code.
+
+## Unit Testing
+
+It's **mandatory** to test all your code against different scenarios to prevent some failures when the project is under production.
+
+You don't want to hear complaints from your clients or bosses, so you need to make tests for every possible scenario that will crash, or destroy, your code. There are a lot of testing tools in the market to do this job.
+
+In Unosquare LABS we have used an standard to organize our test classes and methods that has helped us to make our tests more readable and understandable. Remember, your code could be read by other programmers and testers (also clients). So please, think first in them.
+
+Previously, we had used this convention for make our unit test:
+```
+Method_InitialCondition_ExpectedResult
+```
+Where `Method` is the method that you want to test; `InitialCondition` indicates the initial scenario for the test; and `ExpectedResult`, the result that will throw the method (it could a specific returned result, or even an Exception).
+
+All the methods were encapsulated in one only test class, but following this technique made it difficult to understand the code written for the test and difficult to organize them.
+
+So, instead of following the traditional convention to do the tests, we separated it in the following way:
+
+* The class to be tested (`YourAwesomeClass`, for example). The name of the class could be YourAwesomeClassTest, and this is the base class (and it must be `abstract`). This class will only have the variables, constants, properties, object instances and initializers (the setup) that will be used in your classes.
+* The classes with the name of the methods to be tested (`Methods`). These classes will inherit from the base class, so you don't need to reinvent the wheel initializing variables, constants, etc.
+* The name of the class must be descriptive and clear to understand. 
+* Inside of the class create the methods with the name of the possible scenarios that will occur. What are your `InitialConditions` and what will be your `ExpectedResults`?
+* Optional 1: Use [mocks](https://stackoverflow.com/questions/2665812/what-is-mocking) for your tests.
+* Optional 2: Change the name of the `namespace `(it could be, for example, `namespace YourWorkspace.Test.ClassTests`, in plural)
+* Note 1: If there aren't anything to setup, omit the abstract class.
+
+Here is the pattern that we are proposing: 
+```csharp
+using NUnit.Framework;
+
+namespace YourWorkspace.Test.YourAwesomeClassTest
+{
+        // Use an abstract class as long as you need any setup. Omit it if not
+	public abstract class YourAwesomeClassTest
+	{
+		//Your setup
+	}
+
+	[TestFixture]
+	public class SomeMethodToTest : YourAwesomeClassTest
+	{
+		[Test]
+		public void OnePossibleScenarioOfTheMethod_ExpectedResult()
+		{
+			//Your code
+		}
+
+		//Other methods
+	}
+
+	//Other classes
+}
+```
+Let's suppose that you have a Calculator class, with basic functionalities (addition, multiplication, substraction and division), and to verify if your basic calcultor works you need to test the methods.
+
+Using the pattern proposed, your test class should look like this:
+```csharp
+using NUnit.Framework;
+
+namespace YourWorkspace.Test.CalculatorTests
+{
+    public abstract class CalculatorTest
+    {
+        protected double x = 234.12, y = 134;
+        protected string xString = "Hi", yString = "Something";
+    }
+
+    [TestFixture]
+    public class Addition : CalculatorTest
+    {
+        [Test]
+        public void SumTwoNumbers_ReturnsTrue()
+        {
+            var calc = new Calculator();
+
+            Assert.AreEqual(calc.Addition(x, y), 368.12);
+        }
+
+        [Test]
+        public void SumTwoNumbers_ReturnsFalse()
+        {
+            var calc = new Calculator();
+
+            Assert.AreEqual(calc.Addition(x, y), 5);
+        }
+
+        [Test]
+        public void SumTwoRandomVariables_ThrowsException()
+        {
+            var calc = new Calculator();
+
+            Assert.Throws<Exception>(() =>
+            {
+                calc.Addition(xString, y);
+            });
+        }
+
+        //Other possible scenarios
+    }
+
+    //Your other classes to test
+}
+```
+Following this convention makes clearer and easy to understand the code that you're writing, and as stated before: your code could be read by other programmers and testers (also clients). So please, think first on them.
+
+Advantages of this convention:
+
+* Code tests well organized
+* Method names more descriptives
+* Easy to maintain
+
+Disadvantages of this convention:
+
+* Nothing
+
+[Check](https://github.com/unosquare/swan/blob/master/test/Unosquare.Swan.Test/ObjectComparerTest.cs) how our test classes are structured in one of our OSS projects.
+
+We are proudly to share with you this standard, so feel free to use this in your projects. Enjoy it!
 
 # C# Documentation
 
