@@ -13,7 +13,7 @@ Enjoy it!
   - [Ghost Doc](#ghost-doc)
   - [DocFx](#docfx)
 
-# C# Best Practices
+# Coding
 
 ## StyleCop
 
@@ -155,7 +155,7 @@ Disadvantages of this convention:
 
 We are proudly to share with you this standard, so feel free to use this in your projects. Enjoy it!
 
-# C# Documentation
+# Documentation
 
 ## Ghost Doc
 
