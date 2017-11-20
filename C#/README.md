@@ -22,7 +22,7 @@ Enjoy it!
 ### How to use it
 
 * Install the [StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/) nuget in each project in your solution.
-* Copy the file *StyleCop.Analyzers.ruleset* in the your solution's root folder.
+* Copy the file [StyleCop.Analyzers.ruleset](https://github.com/unosquare/best-practices/blob/master/C%23/StyleCop.Analyzers.ruleset) in the your solution's root folder.
 * Reference the ruleset using the following XML node in each CSPROJ file:
 
 ```
@@ -42,19 +42,13 @@ It's **mandatory** to test all your code against different scenarios to prevent 
 
 You don't want to hear complaints from your clients or bosses, so you need to make tests for every possible scenario that will crash, or destroy, your code. There are a lot of testing tools in the market to do this job.
 
-In Unosquare LABS we have used an standard to organize our test classes and methods that has helped us to make our tests more readable and understandable. Remember, your code could be read by other programmers and testers (also clients). So please, think first in them.
+In Unosquare Labs we have used an standard to organize our test classes and methods that has helped us to make our tests more readable and understandable. Remember, your code could be read by other programmers and testers (also clients). So please, think first in them.
 
-Previously, we had used this convention for make our unit test:
-```
-Method_InitialCondition_ExpectedResult
-```
-Where `Method` is the method that you want to test; `InitialCondition` indicates the initial scenario for the test; and `ExpectedResult`, the result that will throw the method (it could a specific returned result, or even an Exception).
+### How to name unit tests
 
-All the methods were encapsulated in one only test class, but following this technique made it difficult to understand the code written for the test and difficult to organize them.
+Follow the next steps:
 
-So, instead of following the traditional convention to do the tests, we separated it in the following way:
-
-* The class to be tested (`YourAwesomeClass`, for example). The name of the class could be YourAwesomeClassTest, and this is the base class (and it must be `abstract`). This class will only have the variables, constants, properties, object instances and initializers (the setup) that will be used in your classes.
+* Create a abstract class for the class to be tested (`YourAwesomeClass`, for example). The name of the abstract class  should suffix Test. This class will only have shared members and `SetUp` and `TearDown` methods. This step is optional, if you target class doesn't require any initialization or shared members, you can skip the base class creation.
 * The classes with the name of the methods to be tested (`Methods`). These classes will inherit from the base class, so you don't need to reinvent the wheel initializing variables, constants, etc.
 * The name of the class must be descriptive and clear to understand. 
 * Inside of the class create the methods with the name of the possible scenarios that will occur. What are your `InitialConditions` and what will be your `ExpectedResults`?
