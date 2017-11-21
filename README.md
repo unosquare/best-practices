@@ -1,10 +1,12 @@
 # docfx-seed
 [![Build status](https://ci.appveyor.com/api/projects/status/psjd5g56kr0vayiw?svg=true)](https://ci.appveyor.com/project/qinezh/docfx-seed)
 
+***NOTE***: We are using the template here to build all project's documentation, this builds are taken place on each appveyor.yml configuration of each project.
+
 ## Description
 This is a sample docfx documentation project. It contains .NET source code and markdown files.
 `docfx.json` is the configuration file for running `docfx`.
-`docfx` will generate a static website as similar to http://docascode.github.io/docfx-seed/index.html
+`docfx` will generate a static website as similar to http://docascode.github.io/docfx-seed/index.html.
 
 ## How to run
 ### Under Windows
