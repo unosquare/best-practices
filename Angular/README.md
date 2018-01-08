@@ -8,5 +8,5 @@
 ```
 $ npm install eslint --save-dev
 ```
-* Copy the file *.eslintrc.json* in the your solution's root folder.
+* Copy the file *.eslintrc.json* in your solution's root folder.
 * Execute `eslint` and review the output.
