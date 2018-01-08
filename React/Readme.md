@@ -1,6 +1,6 @@
 # ESLint
 
-[ESLint](https://eslint.org/) is a tool to lint Javascript code, and using special rules it can lint React projects.
+[ESLint](https://eslint.org/) is a tool to lint Javascript code and using special rules it can lint React projects.
 
 ## How to use it :ok_hand:
 
@@ -55,7 +55,7 @@ $ npm install mocha --save-dev
 ```
 * As we [pointed out above](#eslint) in order to use mocha with ESLint we must set mocha as true in the env object inside our **.eslintrc.json** file.
 ## Chai
-Mocha allows us to use any assertion library we want. In this case we are using Chai.
+Mocha allows us to use any assertion library we want. In this case, we are using Chai.
 
 ### How to use it
 * Install Chai via npm 
@@ -71,12 +71,12 @@ According to [Enzyme's website](http://airbnb.io/enzyme/):
 ```
 $ npm install enzyme --save-dev
 ```
-* In order to use Enzyme you need to install an adapter as well. The adapter's version depends on which React version you are currently using. Please check this [page](http://airbnb.io/enzyme/docs/installation/) for more information about Enzyme adapters. For instance, in this example we'll install enzyme-adapter-react-15 as if we were using React 15.
+* In order to use Enzyme you need to install an adapter as well. The adapter's version depends on which React version you are currently using. Please check this [page](http://airbnb.io/enzyme/docs/installation/) for more information about Enzyme adapters. For instance, in this example, we'll install enzyme-adapter-react-15 as if we were using React 15.
 ```
 $ npm install enzyme-adapter-react-15 --save-dev
 ```
 ## Sinon
-Sinon is a standalone unit testing library for JavaScript. It provides spies, stubs and mocks.
+Sinon is a standalone unit testing library for JavaScript. It provides spies, stubs, and mocks.
 ### How to use it
 * Install Sinon via npm 
 ```
@@ -107,8 +107,8 @@ $ npm install karma-webpack --save-dev
 $ npm install karma-chrome-launcher --save-dev
 ```
 ### Configuration
-* Create a **karma.conf.js** file in the your solution's root folder.
-* You can copy and paste this template in your **karma.conf.js** file
+* Create a **karma.conf.js** file in your solution's root folder.
+* You can copy and paste this template into your **karma.conf.js** file
 ```javascript
 module.exports = function (config) {
   config.set({
