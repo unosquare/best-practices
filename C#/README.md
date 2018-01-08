@@ -2,8 +2,6 @@
 
 Welcome to the C# Best Practices and Style Guides. We provide you some C# standards and tools that we use in our OSS projects.
 
-Enjoy it!
-
 ## Table of Contents
 
 - Coding
@@ -40,21 +38,21 @@ Enjoy it!
 
 It's **mandatory** to test all your code against different scenarios to prevent some failures when the project is under production.
 
-You don't want to hear complaints from your clients or bosses, so you need to make tests for every possible scenario that will crash, or destroy, your code. There are a lot of testing tools in the market to do this job.
+You don't want to hear complaints from your clients or bosses, so you need to make tests for every possible scenario that will crash, or destroy your code. There are a lot of testing tools on the market to do this job.
 
-In Unosquare Labs we have used an standard to organize our test classes and methods that has helped us to make our tests more readable and understandable. Remember, your code could be read by other programmers and testers (also clients). So please, think first in them.
+In Unosquare Labs we have used a standard to organize our test classes and methods that have helped us to make our tests more readable and understandable. Remember, your code could be read by other programmers and testers (also clients). So please, think first of them.
 
 ### How to name unit tests
 
 Follow the next steps:
 
-* Create a abstract class for the class to be tested (`YourAwesomeClass`, for example). The name of the abstract class  should suffix Test. This class will only have shared members and `SetUp` and `TearDown` methods. This step is optional, if you target class doesn't require any initialization or shared members, you can skip the base class creation.
+* Create an abstract class for the class to be tested (`YourAwesomeClass`, for example). The name of the abstract class should suffix Test. This class will only have shared members and `SetUp` and `TearDown` methods. This step is optional, if you target class doesn't require any initialization or shared members, you can skip the base class creation.
 * The classes with the name of the methods to be tested (`Methods`). These classes will inherit from the base class, so you don't need to reinvent the wheel initializing variables, constants, etc.
 * The name of the class must be descriptive and clear to understand. 
 * Inside of the class create the methods with the name of the possible scenarios that will occur. What are your `InitialConditions` and what will be your `ExpectedResults`?
 * Optional 1: Use [mocks](https://stackoverflow.com/questions/2665812/what-is-mocking) for your tests.
 * Optional 2: Change the name of the `namespace `(it could be, for example, `namespace YourWorkspace.Test.ClassTests`, in plural)
-* Note 1: If there aren't anything to setup, omit the abstract class.
+* Note 1: If there isn't anything to set up, omit the abstract class.
 
 Here is the pattern that we are proposing: 
 ```csharp
@@ -63,27 +61,27 @@ using NUnit.Framework;
 namespace YourWorkspace.Test.YourAwesomeClassTest
 {
         // Use an abstract class as long as you need any setup. Omit it if not
-	public abstract class YourAwesomeClassTest
-	{
-		//Your setup
-	}
+    public abstract class YourAwesomeClassTest
+    {
+        //Your setup
+    }
 
-	[TestFixture]
-	public class SomeMethodToTest : YourAwesomeClassTest
-	{
-		[Test]
-		public void OnePossibleScenarioOfTheMethod_ExpectedResult()
-		{
-			//Your code
-		}
+    [TestFixture]
+    public class SomeMethodToTest : YourAwesomeClassTest
+    {
+        [Test]
+        public void OnePossibleScenarioOfTheMethod_ExpectedResult()
+        {
+            //Your code
+        }
 
-		//Other methods
-	}
+        //Other methods
+    }
 
-	//Other classes
+    //Other classes
 }
 ```
-Let's suppose that you have a Calculator class, with basic functionalities (addition, multiplication, substraction and division), and to verify if your basic calcultor works you need to test the methods.
+Let's suppose that you have a Calculator class, with basic functionalities (addition, multiplication, and division), and to verify if your basic calculator works you need to test the methods.
 
 Using the pattern proposed, your test class should look like this:
 ```csharp
@@ -133,7 +131,7 @@ namespace YourWorkspace.Test.CalculatorTests
     //Your other classes to test
 }
 ```
-Following this convention makes clearer and easy to understand the code that you're writing, and as stated before: your code could be read by other programmers and testers (also clients). So please, think first on them.
+Following this convention makes clearer and easy to understand the code that you're writing, and as stated before: your code could be read by other programmers and testers (also clients). So please, think first of them.
 
 Advantages of this convention:
 
@@ -147,13 +145,13 @@ Disadvantages of this convention:
 
 [Check](https://github.com/unosquare/swan/blob/master/test/Unosquare.Swan.Test/ObjectComparerTest.cs) how our test classes are structured in one of our OSS projects.
 
-We are proudly to share with you this standard, so feel free to use this in your projects. Enjoy it!
+We are proud to share with you this standard, so feel free to use this in your projects. Enjoy it!
 
 # Documentation
 
 ## Ghost Doc
 
-[Ghost Doc](https://submain.com/products/ghostdoc.aspx?utm_campaign=ghostdoc&utm_medium=listing&utm_source=visualstudiogallery) is a Visual Studio extension that automatically generates XML documentation comments for classes and memebrs based on their type, parameters, name, and other contextual information.
+[Ghost Doc](https://submain.com/products/ghostdoc.aspx?utm_campaign=ghostdoc&utm_medium=listing&utm_source=visualstudiogallery) is a Visual Studio extension that automatically generates XML documentation comments for classes and members based on their type, parameters, name, and other contextual information.
 
 To use it, you need to [download](https://marketplace.visualstudio.com/items?itemName=sergeb.GhostDoc) or install the extension from Visual Studio 2017
 
@@ -163,11 +161,7 @@ In Visual Studio 2017 go to:
 
 then search for GhostDoc Community for VS2017 and installed.
 
-In your code when you want to document something you need to select your class or method, rigth click and with the extension activited select:
-
-* GhostDoc > Document This
-
-Another way to do that is selecting your class or method and with the keyboard command:
+In your code when you want to document something you need to select your class or member and key press the following hotkey:
 
 * Ctrl + Shift + D
 
@@ -243,7 +237,7 @@ If you have several custom templates, use this to build with another template.
 
 #### `toc.yml` file
 
-These are references to the navigation bar that docfx is going to create, it will appear with the name and have a link to the href that are specified in this file.
+These are references to the navigation bar that docfx is going to create, it will appear with the name and have a link to the href that is specified in this file.
 
 ```yml
 - name: API Documentation
