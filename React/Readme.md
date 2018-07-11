@@ -46,22 +46,6 @@ $ npm install eslint-plugin-react --save-dev
 ```
 # Unit testing
 
-## Mocha
-A javascript testing framework for both nodejs and the browser that makes testing easy
-### How to use it
-* Install Mocha via npm 
-```
-$ npm install mocha --save-dev
-```
-* As we [pointed out above](#eslint) in order to use mocha with ESLint we must set mocha as true in the env object inside our **.eslintrc.json** file.
-## Chai
-Mocha allows us to use any assertion library we want. In this case, we are using Chai.
-
-### How to use it
-* Install Chai via npm 
-```
-$ npm install chai --save-dev
-```
 ## Enzyme
 According to [Enzyme's website](http://airbnb.io/enzyme/):
 > Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. Enzyme's API is meant to be intuitive and flexible by mimicking jQuery's API for DOM manipulation and traversal.
@@ -75,78 +59,88 @@ $ npm install enzyme --save-dev
 ```
 $ npm install enzyme-adapter-react-15 --save-dev
 ```
-## Sinon
-Sinon is a standalone unit testing library for JavaScript. It provides spies, stubs, and mocks.
+
+## Jest
+
+Zero configuration testing platform, [Jest website](https://jestjs.io/)
+> Jest is used by Facebook to test all JavaScript code including React applications. One of Jest's philosophies is to provide an integrated "zero-configuration" experience. We observed that when engineers are provided with ready-to-use tools, they end up writing more tests, which in turn results in more stable and healthy code bases.
+
 ### How to use it
-* Install Sinon via npm 
+
+* Install Jest via npm
 ```
-$ npm install sinon --save-dev
+$ npm install --save-dev jest
 ```
-## Karma
- A useful tool that spawns a web server to run our unit tests.
- 
- ### Installation
-* Install Karma via npm 
+
+* And with typescript
 ```
-$ npm install karma --save-dev
+$ npm install --save-dev ts-jest @types/jest
 ```
-* We also need an adapter to use Mocha with Karma
-```
-$ npm install karma-mocha --save-dev
-```
-* As well as a Chai adapter
-```
-$ npm install karma-chai --save-dev
-```
-* Install a plugin to use Webpack as our preprocessor 
-```
-$ npm install karma-webpack --save-dev
-```
-* And lastly a launcher for Chrome
-```
-$ npm install karma-chrome-launcher --save-dev
-```
+
 ### Configuration
-* Create a **karma.conf.js** file in your solution's root folder.
-* You can copy and paste this template into your **karma.conf.js** file
-```javascript
-module.exports = function (config) {
-  config.set({
-      basePath: '',
-      frameworks: ['mocha', 'chai', 'sinon'],
-      files: [
-          'YourAppFolder/*.spec.js' //loads our test files
-      ],
-      exclude: [],
-      preprocessors: {
-          'YourAppFolder/*.spec.js': ["webpack"]  //specifies which files we want to preprocess using webpack
+
+* We usually use a configuration file like:
+
+```js
+const enzyme = require("enzyme");
+const Adapter = require("./customAdapter");
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+
+const open = jest.fn();
+const jsdomWrapper = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdomWrapper;
+
+var localStorageMock = (function() {
+    var store = {};
+    return {
+      getItem(key) {
+        return store[key];
       },
-      // webpack configuration
-      webpack: require('./webpack.config.js'), //loads webpack configuration file
-      webpackMiddleware: {
-          stats: "errors-only"
+      setItem(key, value) {
+        store[key] = value.toString();
       },
-      reporters: ['progress'],
-      port: 9876, //webserver port
-      colors: true,
-      logLevel: config.LOG_INFO,
-      autoWatch: true,
-      browsers: ['ChromeWithoutSecurity'],
-      customLaunchers: {
-          ChromeWithoutSecurity: {
-              base: 'Chrome',
-              flags: ['--disable-web-security']
-          }
+      clear() {
+        store = {};
       },
-      // Continuous Integration mode
-      // if true, Karma captures browsers, runs the tests and exits
-      singleRun: false,
-      concurrency: Infinity
-  });
-};
+      removeItem(key) {
+        delete store[key];
+      }
+    };
+  })();
+
+enzyme.configure({ adapter: new Adapter() });
+
+global.window = window;
+global.document = window.document;
+global.HTMLElement = window.HTMLElement;
+global.localStorage = localStorageMock;
+global.open = open;
+
 ```
-### How to use it
-* Execute 
-```
-$ karma start
+
+* Modify your project's package.json so that the jest section looks something like:
+
+```json
+"jest": {
+    "setupFiles": [
+      "<rootDir>/test/setupTest.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/test/**/*.spec.(ts|tsx)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.base.json"
+      }
+    }
+  }
 ```
