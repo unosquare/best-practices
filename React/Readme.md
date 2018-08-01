@@ -1,8 +1,9 @@
-# TSLint
+# Code Lint
+## TSLint
 
 [TSLint](https://palantir.github.io/tslint/) is a tool to lint TypeScript with support to JSX. If you are coding React with Javascript see next section, ESLint.
 
-## How to use it
+### How to use it
 
 * Install the ESLint package using npm.
 ```
@@ -48,11 +49,11 @@ $ tslint --init
 ```
 * You can add a NPM script to run `tslint`, and also setup a step in your CI configuration to run it.
 
-# ESLint
+## ESLint
 
 [ESLint](https://eslint.org/) is a tool to lint Javascript code and using special rules it can lint React projects.
 
-## How to use it :ok_hand:
+### How to use it :ok_hand:
 
 * Install the ESLint package using npm.
 ```
