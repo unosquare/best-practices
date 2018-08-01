@@ -1,3 +1,53 @@
+# TSLint
+
+[TSLint](https://palantir.github.io/tslint/) is a tool to lint TypeScript with support to JSX. If you are coding React with Javascript see next section, ESLint.
+
+## How to use it
+
+* Install the ESLint package using npm.
+```
+$ npm install tslint --save-dev
+```
+* Generate a basic configuration file
+```
+$ tslint --init
+```
+* Edit the generated file `tslint.json`, you can add the following configuration to enable React support.
+```javascript
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  },
+  "rules": {
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "avoid-template"
+    ],
+    "trailing-comma": [
+      false,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "jsx-no-lambda": false
+  }
+}
+```
+* You can add a NPM script to run `tslint`, and also setup a step in your CI configuration to run it.
+
 # ESLint
 
 [ESLint](https://eslint.org/) is a tool to lint Javascript code and using special rules it can lint React projects.
@@ -44,6 +94,8 @@ $ npm install eslint-plugin-react --save-dev
      }
  }
 ```
+* You can add a NPM script to run `eslint`, and also setup a step in your CI configuration to run it.
+
 # Unit testing
 
 ## Enzyme
