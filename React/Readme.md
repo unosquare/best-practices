@@ -1,4 +1,4 @@
-# Code Lint
+# Code Linting
 ## TSLint
 
 [TSLint](https://palantir.github.io/tslint/) is a tool to lint TypeScript with support to JSX. If you are coding React with Javascript see next section, ESLint.
