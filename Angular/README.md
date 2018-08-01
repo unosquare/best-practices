@@ -9,7 +9,7 @@
 $ npm install eslint --save-dev
 ```
 * Copy and paste the following code inside your `.eslintrc.json` file
-``javascript
+```javascript
 {
   "parserOptions": {
     "ecmaVersion": 6,
