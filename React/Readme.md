@@ -5,9 +5,9 @@
 
 ### How to use it
 
-* Install the ESLint package using npm.
+* Install the TSLint package using npm.
 ```
-$ npm install tslint --save-dev
+$ npm install tslint tslint-react --save-dev
 ```
 * Generate a basic configuration file
 ```
@@ -18,8 +18,7 @@ $ tslint --init
 {
   "extends": [
     "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
+    "tslint-react"
   ],
   "linterOptions": {
     "exclude": [
