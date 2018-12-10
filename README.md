@@ -92,7 +92,7 @@ If you have several custom templates, use this to build with another template.
       "_appTitle": "docfx seed website",
       "_enableSearch": true,
       "_docLogo": "resources/images/doc_logo.svg",
-      "_appLogoPath": "resources/images/logo.png"
+      "_appLogoPath": "resources/images/unosquare_logo.svg"
     },
     "dest": "_site"
   }
