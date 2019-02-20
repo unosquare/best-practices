@@ -10,7 +10,7 @@
   * [MDN Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
   * [MDN Iterator and generatos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators)
   * [MDN Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-* Bonus: Proper use of objects and arrays and control flow .
+* Bonus: Proper use of objects and arrays and control flow.
   * [MDN Reintroduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
   * [MDN Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)  
   * [MDN Array Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
