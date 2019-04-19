@@ -4,7 +4,7 @@ This guideline contains a couple of recipies for document an Open Source Project
 
 ## Table of Contents
 
-* README file
+* [README file](#readme-file)
   * Overview
   * Table of Contents (TOC)
   * Requirements
