@@ -5,19 +5,19 @@ This guideline contains a couple of recipies for document an Open Source Project
 ## Table of Contents
 
 * [README file](#readme-file)
-  * Overview
-  * Table of Contents (TOC)
-  * Requirements
-  * Installation
-  * Usage
-  * Examples
-  * Troubleshooting
-  * Related Projects
-  * Special Thanks
-  * License
-* Source code documentation
-  * .NET
-  * Javascript
+  * [Overview](#overview)
+  * [Table of Contents (TOC)](#table-of-contents-toc)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Examples](#examples)
+  * [Troubleshooting](#troubleshooting)
+  * [Related Projects](#related-projects)
+  * [Special Thanks](#special-thanks)
+  * [License](#license)
+* [Source code documentation](#source-code-documentation)
+  * [.NET](#net)
+  * [Javascript](#javascript)
   
 ## README file
 
