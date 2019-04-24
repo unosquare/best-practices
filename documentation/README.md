@@ -18,7 +18,8 @@ This guideline contains a couple of recipies for document an Open Source Project
 * [Source code documentation](#source-code-documentation)
   * [.NET](#net)
   * [Javascript](#javascript)
-  
+* [Release Notes](#release-notes)
+
 ## README file
 
 Every Open Source Project should contain a README file in the root folder. This file may be a markdown or plain text. The README file will contain information about the project and it should be the initial place where an user can be brief. 
@@ -98,3 +99,7 @@ Create a static web site with the documentation of your project is good idea, an
 ### Javascript/Typescript
 
 Javascript/Typescript projects should include documentation also. While the [JSDoc] standard is good enough to add documentation to common JS code, we encourage to create a README file showing all the classes or functions included in your project.
+
+## Release Notes
+
+The Release Notes are a tool to communicate easily with your community because you can explain what have changed in the project and if there is any breaking changes. Even if you update your source code, you need to keep track of the details of each published version. A Changelog file in the root path is a good practice, or if you are using GitHub you can add a release and this will include a tag in your git repository. This last approach is much better because helps to other users to visualize the git log.
