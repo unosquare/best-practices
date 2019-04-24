@@ -1,5 +1,7 @@
 # Unosquare Labs Best Practices
 
+*:star: Please star this project if you find it useful!*
+
 Some useful tips and conventions that we use in Unosquare Labs and we share with you.
 
 ## Table of Contents
