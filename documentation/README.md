@@ -75,10 +75,26 @@ If the project contains or use any commercial product with open source license, 
 
 Finally, if you need to add additional information about the licesing in the project, include a paragrah in the very end of the README file. You can also provide a LICENSE file in the root path.
 
+---
+
+Get some ideas and samples how to write a README file. Check the following projects:
+
+* https://github.com/unosquare/swan
+* https://github.com/unosquare/embedio
+* https://github.com/unosquare/passcore
+
 ## Source code documentation
 
-
+Documenting the source code is a very important task, that you should perform in parallel while you are writing your code. If you write and analyse the documentation in this early stage you may see in a differente perspective your code and probably fix a invalid method signature or a complex class.
 
 ### .NET
 
-### Javascript
+For .NET projects, we recommend install, the Visual Studio extension, [GhostDoc](https://submain.com/products/ghostdoc.aspx). This tool let you add quick documentation with a keyboard shortcut, this give you a start point to write down the source code documentation. Avoid copy and paste, and dedicate time to explain the returns values of the methods.
+
+If you are exposing public classes, try to add code snippet as example of your class. Don't pretend that your class is self-explanatory, because it does not.
+
+Create a static web site with the documentation of your project is good idea, and it is quite simple to do. You can rely on tools, like [DocFx](https://dotnet.github.io/docfx/), in your CI/CD process to autogenerate content from your XML documentation. Check the following
+
+### Javascript/Typescript
+
+Javascript/Typescript projects should include documentation also. While the [JSDoc] standard is good enough to add documentation to common JS code, we encourage to create a README file showing all the classes or functions included in your project.
