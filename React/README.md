@@ -75,6 +75,8 @@ const GlobalContextProvider: React.FunctionComponent<any> = ({
 ### Things we learned
 One of the things we noticed was the fact that every intent to show a new message in our snackbar was causing a re-render on every component. Please take a look at it: https://codesandbox.io/s/unosquare-best-practices-react-context-1-kqbux
 
+<iframe src="https://codesandbox.io/embed/unosquare-best-practices-react-context-1-kqbux?fontsize=14" title="Unosquare best practices - React context #1" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
 So, we learned that: **Passing `value={{}}` to the provider will re-render any consumer even if the properties inside `value` are the same**
 
 Meaning that we needed to find a way to pass the same `value` if it hasn't changed. That way, consumers won't be updated because there are no changes.
