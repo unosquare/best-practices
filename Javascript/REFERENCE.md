@@ -1,7 +1,7 @@
 # General Syllabus
 
 * Basics: Scopes, closures, `this`, `bind`, `apply` and types.
-  * [You Don't Know JS: Scopes & Closures](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)
+  * [You Don't Know JS: Scopes & Closures](https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/scope-closures)
   * [You Don't Know JS: this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes)
   * [You Don't Know JS: Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20&%20grammar/README.md#you-dont-know-js-types--grammar)  
   * [MDN Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
